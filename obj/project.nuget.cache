@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "r52WCrnx6CzBqsvtO4kkIMVuLzDiScuKLk4QZigIfO9iWKoT+F6+4pVANqDAU5JyPQ7W2rrMrDYA0YbVQVBJ1g==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\knut9\\source\\repos\\OsloBysykkelUpdatesBlazor\\OsloBysykkelUpdatesBlazor\\OsloBysykkelUpdatesBlazor.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\knut9\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

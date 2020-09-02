@@ -1,0 +1,48 @@
+﻿@page "/fetchdata"
+
+@using OsloBysykkelUpdatesBlazor.Data
+@inject BySykkelStationsService bySykkelStationsService
+
+<h1>Oslo Bysykkel</h1>
+
+<p>Her er en liste med informasjon om sykkelstativer</p>
+
+@if (stations == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Sykkelstativ Id</th>
+                <th>Ledige Sykkler</th>
+                <th>Ledige låser</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var station in stations) // add station updates to table. 
+            {
+                <tr>
+                    <td>@station.station_id</td>
+                    <td>@station.num_bikes_available</td>
+                    <td>@station.num_docks_available</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<Station> stations;
+
+    /// <summary>
+    /// Get a list of all Bysykkel Stations from bySykkelStationsService.
+    /// </summary>
+    /// <returns></returns>
+    protected override async Task OnInitializedAsync()
+    {
+        stations = await bySykkelStationsService.GetStationsAsync();
+    }
+}
